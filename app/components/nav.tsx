@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import type { FC } from "react";
+import ThemeToggle from "./theme";
 import Link from "next/link";
 
 interface NavLinkProps {
@@ -30,9 +31,9 @@ const Nav: FC = () => {
           <ul className="mr-4 flex items-center gap-8">
             <Link href={"/recipes"}>Your Recipes</Link>
             <Link href={"/add"}>New Recipe</Link>
-
-            <li></li>
           </ul>
+
+          <ThemeToggle />
         </nav>
       </div>
 
@@ -42,7 +43,10 @@ const Nav: FC = () => {
           <a href="/">
             <p className="text-2xl font-bold">Recipe Book</p>
           </a>
+          
           <div className="flex items-center">
+          <ThemeToggle />
+
             <button
               className="px-2 hover:scale-110"
               aria-label="dropdown"
