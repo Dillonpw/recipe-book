@@ -1,18 +1,20 @@
-import { sql } from '@vercel/postgres';
-import { NextResponse } from 'next/server';
- 
+import { sql } from "@vercel/postgres";
+import { NextResponse } from "next/server";
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const petName = searchParams.get('petName');
-  const ownerName = searchParams.get('ownerName');
- 
+  const recipeName = searchParams.get("recipeName");
+  const ingredients = searchParams.get("ingredients");
+  const steps = searchParams.get("steps");
+
   try {
-    if (!petName || !ownerName) throw new Error('Pet and owner names required');
-    await sql`INSERT INTO Pets (Name, Owner) VALUES (${petName}, ${ownerName});`;
+    if (!recipeName || !ingredients || !steps)
+      throw new Error("Recipe name, ingredients, and steps are required");
+    await sql`INSERT INTO Recipes (name, ingredients, steps) VALUES (${recipeName}, ${ingredients}, ${steps});`;
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 });
   }
- 
-  const pets = await sql`SELECT * FROM Pets;`;
-  return NextResponse.json({ pets }, { status: 200 });
+
+  const recipes = await sql`SELECT * FROM Recipes;`;
+  return NextResponse.json({ recipes }, { status: 200 });
 }
