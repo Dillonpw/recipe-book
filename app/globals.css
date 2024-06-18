@@ -7,9 +7,7 @@ html {
   transition: background-color 0.5s;
 }
 
-html.dark {
-  background-color: theme('colors.slate.900');
-}
+
 
 .theme-icon {
   transform: rotate(0deg);
@@ -21,4 +19,8 @@ html.dark {
 
 html.dark .theme-icon {
   transform: rotate(180deg);
+}
+
+.bg-dark {
+  background-color: #010202;
 }
