@@ -14,7 +14,7 @@ async function getRecipe() {
     }
   
     return (
-      <div className='mx-4 p-2'>
+      <div className='mx-6 p-2'>
         <h1 className='text-4xl text-center'>{recipe.title}</h1>
         <h2 className='text-2xl'>Ingredients</h2>
         <ul className='list-disc'>
@@ -22,7 +22,6 @@ async function getRecipe() {
             <li key={index}>{ingredient}</li>
           ))}
         </ul>
-        <h2 className='text-2xl'>Steps</h2>
         <ol className='list-decimal'>
           {recipe.steps.map((step, index) => (
             <li key={index}>{step}</li>
