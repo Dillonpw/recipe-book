@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import Link from "next/link";
+import { SignIn } from "./components/sign-in";
 
 interface Recipe {
   id: number;
@@ -21,12 +22,17 @@ export default async function RecipePage() {
   const recipes = await getRecipes();
 
   if (!recipes || recipes.length === 0) {
-    return <div>No recipes found</div>;
+    return (
+      <>
+        <div>No recipes found</div>
+        <SignIn />
+      </>
+    );
   }
 
   return (
     <div className="m-4 h-full text-3xl">
-      <h1 className="text-4xl text-center font-bold">Recipe List</h1>
+      <h1 className="text-center text-4xl font-bold">Recipe List</h1>
       <ul>
         {recipes.map((recipe) => (
           <li key={recipe.id}>
@@ -36,6 +42,7 @@ export default async function RecipePage() {
           </li>
         ))}
       </ul>
+      <SignIn />
     </div>
   );
 }
