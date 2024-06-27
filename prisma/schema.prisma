@@ -12,6 +12,7 @@ model User {
   name          String?
   email         String          @unique
   emailVerified DateTime?
+  image          String?
   recipes       Recipe[]       
   accounts      Account[]
   sessions      Session[]
@@ -28,7 +29,6 @@ model Recipe {
   ingredients String[]
   steps       String[]
   tags        String[]
-  image       String?
   userId      String   // Foreign key to link to User
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade) // Relation to User
  
