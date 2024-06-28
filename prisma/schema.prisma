@@ -28,10 +28,8 @@ model Recipe {
   title       String   @db.VarChar(255)
   ingredients String[]
   steps       String[]
-  tags        String[]
   userId      String   // Foreign key to link to User
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade) // Relation to User
- 
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }

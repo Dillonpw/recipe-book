@@ -2,16 +2,16 @@ import React from "react";
 import { PrismaClient } from "@prisma/client";
 import { auth } from "../../auth";
 import Link from "next/link";
-import RecipeForm from "./recipeForm";
 
 interface Recipe {
   id: number;
   title: string;
   ingredients: string[];
   steps: string[];
-  tags: string[];
+  userId: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
-
 const prisma = new PrismaClient();
 
 async function getRecipes(userId: string): Promise<Recipe[]> {
@@ -41,6 +41,7 @@ export default async function RecipeList() {
     return (
       <>
         <div>No recipes found</div>
+        <Link href="/new-recipe">Add Recipe</Link>
       </>
     );
   }

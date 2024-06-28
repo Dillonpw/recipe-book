@@ -1,12 +1,15 @@
 import { SignIn } from "./components/sign-in";
-import RecipeList from "./components/home";
+import { SignOut } from "./components/signout";
+import Link from "next/link";
 
 const Content = () => {
   return (
     <div>
-      <RecipeList />
       <SignIn />
-      <a href="/new-recipe"> add</a>
+      <SignOut />
+      <Link href="/new-recipe"> add</Link>
+      <Link href="/recipelist"> list</Link>
+
     </div>
   );
 };

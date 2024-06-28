@@ -1,11 +1,9 @@
-import React from "react"
-import RecipeForm from "../components/recipeForm"
-import Nav from "../components/nav"
+import React from "react";
+import RecipeForm from "../components/recipeForm";
 export default function Page() {
-    return (
-        <div>
-            <RecipeForm />
-        </div>
-    )
- }
-
+  return (
+    <div>
+      <RecipeForm />
+    </div>
+  );
+}

@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import Link from 'next/link';
 
 async function getRecipe() {
     const prisma = new PrismaClient();
@@ -28,11 +29,7 @@ async function getRecipe() {
             <li key={index}>{step}</li>
           ))}
         </ol>
-        <ul>
-          {recipe.tags.map((tag, index) => (
-            <li key={index}>{tag}</li>
-          ))}
-        </ul>
+        <Link href='/'>Back to Home</Link>
       </div>
     );
   }
