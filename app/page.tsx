@@ -6,6 +6,7 @@ const Content = () => {
     <div>
       <RecipeList />
       <SignIn />
+      <a href="/new-recipe"> add</a>
     </div>
   );
 };
