@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ThemeToggle from "./theme";
 
-const Nav: React.FC = () => {
+const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -13,7 +13,7 @@ const Nav: React.FC = () => {
       <div className="mx-20 hidden py-2 text-2xl md:block">
         <nav className="my-4 flex items-center justify-between">
           <a href="/">
-            <h1 className="font-bold">Recipes</h1>
+            <h1 className="font-bold">Recipe Book</h1>
           </a>
 
           <ThemeToggle />

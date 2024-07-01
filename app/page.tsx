@@ -9,7 +9,6 @@ const Content = () => {
       <SignOut />
       <Link href="/new-recipe"> add</Link>
       <Link href="/recipelist"> list</Link>
-
     </div>
   );
 };

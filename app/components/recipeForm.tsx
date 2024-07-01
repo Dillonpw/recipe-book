@@ -15,8 +15,6 @@ const RecipeForm = () => {
       steps: steps.split(",").map((item) => item.trim()),
     };
 
-    console.log("Submitting recipe data:", recipeData); // Debugging log
-
     const response = await fetch("/api/addRecipe", {
       method: "POST",
       headers: {
@@ -30,7 +28,6 @@ const RecipeForm = () => {
       console.log("Recipe created successfully:", newRecipe);
     } else {
       const error = await response.json();
-      console.error("Failed to create recipe:", error); // Debugging log
     }
   };
 

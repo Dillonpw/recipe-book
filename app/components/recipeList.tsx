@@ -1,5 +1,5 @@
 import React from "react";
-import { PrismaClient } from "@prisma/client";
+import prisma from "../../lib/prisma";
 import { auth } from "../../auth";
 import Link from "next/link";
 
@@ -12,7 +12,6 @@ interface Recipe {
   createdAt: Date;
   updatedAt: Date;
 }
-const prisma = new PrismaClient();
 
 async function getRecipes(userId: string): Promise<Recipe[]> {
   const recipes = await prisma.recipe.findMany({

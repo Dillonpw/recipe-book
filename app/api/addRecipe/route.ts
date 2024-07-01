@@ -1,9 +1,6 @@
-// app/api/addRecipe/route.ts
-import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
-import { auth } from '@/auth';
-
-const prisma = new PrismaClient();
+import { NextRequest, NextResponse } from "next/server";
+import { auth } from "@/auth";
+import prisma from "@/lib/prisma";
 
 export async function POST(req: NextRequest) {
   try {
@@ -17,7 +14,10 @@ export async function POST(req: NextRequest) {
     const { title, ingredients, steps } = await req.json();
 
     if (!title || !ingredients || !steps) {
-      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Missing required fields" },
+        { status: 400 },
+      );
     }
 
     const newRecipe = await prisma.recipe.create({
@@ -34,7 +34,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(newRecipe, { status: 201 });
   } catch (error) {
     console.error("Failed to create recipe:", error);
-    return NextResponse.json({ error: "Failed to create recipe" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to create recipe" },
+      { status: 500 },
+    );
   } finally {
     await prisma.$disconnect();
   }

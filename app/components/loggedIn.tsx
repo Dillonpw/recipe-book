@@ -1,7 +1,7 @@
 import { auth } from "@/auth";
 import React from "react";
 
-const LoggedIr: React.FC = async () => {
+const LoggedIn = async () => {
   const session = await auth();
 
   if (!session?.user) return null;
@@ -13,4 +13,4 @@ const LoggedIr: React.FC = async () => {
   );
 };
 
-export default LoggedIr;
+export default LoggedIn;
