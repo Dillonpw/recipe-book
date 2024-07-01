@@ -1,12 +1,10 @@
-import { SignIn } from "./components/sign-in";
-import { SignOut } from "./components/signout";
+import LoggedIn from "./components/loggedIn";
 import Link from "next/link";
 
 const Content = () => {
   return (
     <div>
-      <SignIn />
-      <SignOut />
+      <LoggedIn />
       <Link href="/new-recipe"> add</Link>
       <Link href="/recipelist"> list</Link>
     </div>
