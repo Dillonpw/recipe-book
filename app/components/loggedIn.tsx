@@ -6,9 +6,7 @@ import { SignOut } from "./signout";
 const LoggedIn = async () => {
   const session = await auth();
 
-  if (!session?.user) return (
-    <SignIn />
-  );
+  if (!session?.user) return <SignIn />;
 
   return (
     <div>
@@ -16,7 +14,6 @@ const LoggedIn = async () => {
       <SignOut />
     </div>
   );
-
 };
 
 export default LoggedIn;
