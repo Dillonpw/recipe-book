@@ -1,27 +1,47 @@
 "use client";
 
-import React from "react";
+import { useState } from "react";
 
 interface DeleteRecipeProps {
-  recipeId: number;
-  onDelete: () => void;
+  recipeId: string;
 }
 
-const DeleteRecipe: React.FC<DeleteRecipeProps> = ({ recipeId, onDelete }) => {
+const DeleteRecipe: React.FC<DeleteRecipeProps> = ({ recipeId }) => {
+  const [isDeleting, setIsDeleting] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+
   const handleDelete = async () => {
-    const confirmed = confirm("Are you sure you want to delete this recipe?");
-    if (confirmed) {
-      await fetch(`/api/recipes/${recipeId}`, {
+    setIsDeleting(true);
+    setError(null);
+
+    try {
+      const response = await fetch(`/api/deleteRecipe`, {
         method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: recipeId }),
       });
-      onDelete();
+
+      if (!response.ok) {
+        throw new Error("Failed to delete the recipe");
+      }
+
+      alert("Recipe deleted successfully");
+    } catch (error) {
+      setError((error as Error).message);
+    } finally {
+      setIsDeleting(false);
     }
   };
 
   return (
-    <button onClick={handleDelete} className="text-red-500">
-      Delete
-    </button>
+    <div>
+      <button onClick={handleDelete} disabled={isDeleting}>
+        {isDeleting ? "Deleting..." : "Delete Recipe"}
+      </button>
+      {error && <p style={{ color: "red" }}>{error}</p>}
+    </div>
   );
 };
 

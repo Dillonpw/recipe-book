@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import prisma from "../../lib/prisma";
 import { auth } from "../../auth";
 import Link from "next/link";
-import DeleteRecipe from "./deleteRecipe";
+import DeleteRecipe from "../components/deleteRecipe";
 
 interface Recipe {
   id: number;
@@ -23,35 +23,19 @@ async function getRecipes(userId: string): Promise<Recipe[]> {
   return recipes;
 }
 
-const RecipeList: React.FC = () => {
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
-  const [loading, setLoading] = useState(true);
+export default async function RecipeList() {
+  const session = await auth();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const session = await auth();
-
-      if (!session || !session.user || !session.user.id) {
-        setLoading(false);
-        return;
-      }
-
-      const userId = session.user.id;
-      const recipes = await getRecipes(userId);
-      setRecipes(recipes);
-      setLoading(false);
-    };
-
-    fetchData();
-  }, []);
-
-  const handleDelete = async (deletedRecipeId: number) => {
-    setRecipes(recipes.filter(recipe => recipe.id !== deletedRecipeId));
-  };
-
-  if (loading) {
-    return <div>Loading...</div>;
+  if (!session || !session.user || !session.user.id) {
+    return (
+      <>
+        <div>No recipes found</div>
+      </>
+    );
   }
+
+  const userId = session.user.id;
+  const recipes = await getRecipes(userId);
 
   if (!recipes || recipes.length === 0) {
     return (
@@ -67,16 +51,14 @@ const RecipeList: React.FC = () => {
       <h1 className="text-center text-4xl font-bold">Recipe List</h1>
       <ul>
         {recipes.map((recipe) => (
-          <li key={recipe.id} className="flex justify-between items-center">
+          <li key={recipe.id} className="flex items-center space-x-4">
             <Link className="un" href={`/${recipe.id}`}>
               {recipe.title}
             </Link>
-            <DeleteRecipe recipeId={recipe.id} onDelete={() => handleDelete(recipe.id)} />
+            <DeleteRecipe recipeId={recipe.id.toString()} />
           </li>
         ))}
       </ul>
     </div>
   );
-};
-
-export default RecipeList;
+}
