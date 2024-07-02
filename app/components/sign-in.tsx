@@ -11,15 +11,6 @@ export function SignIn() {
       >
         <button type="submit">Signin with GitHub</button>
       </form>
-      <form
-        action={async (formData) => {
-          "use server";
-          await signIn("resend", formData);
-        }}
-      >
-        <input type="text" name="email" placeholder="Email" />
-        <button type="submit">Signin with Resend</button>
-      </form>
     </>
   );
 }
