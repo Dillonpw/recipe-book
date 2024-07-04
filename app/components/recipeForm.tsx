@@ -36,7 +36,7 @@ const RecipeForm = () => {
 
   return (
     <>
-      <h1 className="text-center text-6xl">Add A New Recipe</h1>
+      <h1 className="text-center text-6xl font-bold">Add A New Recipe</h1>
       <form onSubmit={handleSubmit} className="m-10">
         <div className="mb-4">
           <label htmlFor="title" className="text-4xl">

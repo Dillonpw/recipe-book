@@ -1,6 +1,7 @@
 import LoggedIn from "./components/loggedIn";
 import Link from "next/link";
 import { Button } from "./components/ui/button";
+import { SignIn } from "./components/sign-in";
 
 const Content = () => {
   return (
@@ -22,6 +23,8 @@ const Content = () => {
               <Link href="/recipelist">My Recipes</Link>
             </Button>
           </div>
+          <SignIn />
+
         </div>
       </div>
     </>

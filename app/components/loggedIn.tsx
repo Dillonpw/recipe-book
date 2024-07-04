@@ -1,12 +1,11 @@
 import { auth } from "@/auth";
 import React from "react";
-import { SignIn } from "./sign-in";
 import { SignOut } from "./signout";
 
 const LoggedIn = async () => {
   const session = await auth();
 
-  if (!session?.user) return <SignIn />;
+  if (!session?.user) return null;
 
   return (
     <div className="mt-4 flex w-full items-center justify-between px-4">
