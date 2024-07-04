@@ -1,6 +1,7 @@
 import React from "react";
 import prisma from "../../lib/prisma";
 import { auth } from "../../auth";
+import { Button } from "./ui/button";
 import Link from "next/link";
 import DeleteRecipe from "../components/deleteRecipe";
 
@@ -29,7 +30,12 @@ export default async function RecipeList() {
   if (!session || !session.user || !session.user.id) {
     return (
       <>
-        <div>No recipes found</div>
+        <div className="m-10 text-3xl text-center">
+          <p className=" mb-4">Sorry... No recipes found.</p>Want to{" "}
+          <Link href="/new-recipe" className="un text-3xl font-bold">
+            Add A Recipe?
+          </Link>
+        </div>
       </>
     );
   }

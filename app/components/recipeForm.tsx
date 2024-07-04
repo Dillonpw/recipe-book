@@ -1,5 +1,8 @@
 "use client";
 import React, { useState } from "react";
+import { Input } from "@/app/components/ui/input";
+import { Textarea } from "@/app/components/ui/textarea";
+import { Button } from "@/app/components/ui/button";
 
 const RecipeForm = () => {
   const [title, setTitle] = useState("");
@@ -32,10 +35,12 @@ const RecipeForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="title">Title:</label>
-        <input
+    <>
+    <h1 className="text-4xl text-center mt-10">Add a New Recipe</h1>
+    <form onSubmit={handleSubmit} className="m-10">
+      <div className="mb-4">
+        <label htmlFor="title" className="text-4xl">Title:</label>
+        <Input
           type="text"
           id="title"
           value={title}
@@ -43,10 +48,9 @@ const RecipeForm = () => {
           required
         />
       </div>
-      <div>
-        <label htmlFor="ingredients">Ingredients (comma-separated):</label>
-        <input
-          type="text"
+      <div className="mb-4">
+        <label htmlFor="ingredients" className="text-2xl">Ingredients (comma-separated):</label>
+        <Textarea
           id="ingredients"
           value={ingredients}
           onChange={(e) => setIngredients(e.target.value)}
@@ -54,17 +58,17 @@ const RecipeForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="steps">Steps (comma-separated):</label>
-        <input
-          type="text"
+        <label htmlFor="steps" className="text-2xl">Steps (comma-separated):</label>
+        <Textarea
           id="steps"
           value={steps}
           onChange={(e) => setSteps(e.target.value)}
           required
         />
       </div>
-      <button type="submit">Submit</button>
+      <Button  className="mt-4" type="submit">Submit</Button>
     </form>
+    </>
   );
 };
 
