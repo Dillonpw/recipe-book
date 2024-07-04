@@ -1,4 +1,5 @@
 import { signIn } from "@/auth";
+import { Button } from "./ui/button";
 
 export function SignIn() {
   return (
@@ -9,7 +10,7 @@ export function SignIn() {
           await signIn("github", { redirectTo: "/recipelist" });
         }}
       >
-        <button type="submit">Signin with GitHub</button>
+        <Button type="submit">Signin with GitHub</Button>
       </form>
     </>
   );
