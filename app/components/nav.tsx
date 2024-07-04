@@ -41,9 +41,6 @@ const Nav = () => {
             width={50}
             height={50}
           />
-          <Link href="/">
-            <p className="text-2xl font-bold">Recipe Book</p>
-          </Link>
 
           <div className="flex items-center">
             <ThemeToggle />
@@ -77,6 +74,7 @@ const Nav = () => {
               >
                 My Recipes
               </Link>
+              <Link href="/" onClick={closeMenu} className="block py-8 hover:bg-gray-200 dark:hover:bg-gray-700">Home</Link>
             </div>
           </>
         )}
