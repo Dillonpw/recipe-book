@@ -13,6 +13,14 @@ const Nav = () => {
       {/* Desktop Navigation */}
       <div className="mx-20 hidden py-2 text-2xl md:block">
         <nav className="my-4 flex items-center justify-between">
+          <Image
+            src={"/RecipeBook.jpeg"}
+            alt="logo"
+            className="rounded-xl"
+            width={50}
+            height={50}
+          />
+
           <a href="/">
             <h1 className="font-bold">Recipe Book</h1>
           </a>
@@ -24,6 +32,13 @@ const Nav = () => {
       {/* Mobile Navigation */}
       <div className="relative mx-5 py-2 text-4xl md:hidden">
         <nav className="my-4 flex items-center justify-between">
+          <Image
+            src={"/RecipeBook.jpeg"}
+            alt="logo"
+            className="rounded-xl"
+            width={50}
+            height={50}
+          />
           <a href="/">
             <p className="text-2xl font-bold">Recipe Book</p>
           </a>
