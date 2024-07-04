@@ -11,7 +11,7 @@ const Nav = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="fixed-nav bg-gray-100 shadow-lg transition-all duration-300 dark:bg-[#121212] dark:text-white">
+    <header className="fixed-nav bg-gray-100 shadow-lg transition-all duration-300 dark:bg-[#242424] dark:text-white">
       {/* Desktop Navigation */}
       <div className="mx-20 hidden py-2 text-2xl md:block">
         <nav className="my-4 flex items-center justify-between">
