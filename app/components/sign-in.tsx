@@ -10,7 +10,9 @@ export function SignIn() {
           await signIn("github", { redirectTo: "/recipelist" });
         }}
       >
-        <Button className="mt-10" type="submit">Signin with GitHub</Button>
+        <Button className="mt-10" type="submit">
+          Signin with GitHub
+        </Button>
       </form>
     </>
   );

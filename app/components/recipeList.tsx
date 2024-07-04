@@ -2,6 +2,7 @@ import React from "react";
 import prisma from "../../lib/prisma";
 import { auth } from "../../auth";
 import { Button } from "./ui/button";
+import { SignIn } from "./sign-in";
 import Link from "next/link";
 import DeleteRecipe from "../components/deleteRecipe";
 
@@ -29,14 +30,10 @@ export default async function RecipeList() {
 
   if (!session || !session.user || !session.user.id) {
     return (
-      <>
-        <div className="mb-10 text-3xl text-center">
-          <p className="mb-4">Sorry... No recipes found.</p>Want to{" "}
-          <Link href="/new-recipe" className="un text-3xl font-bold">
-            Add A Recipe?
-          </Link>
-        </div>
-      </>
+      <div className="flex h-full flex-col items-center justify-center text-center">
+        <p className="mb-4 text-3xl">Sorry... You&apos;re Not Logged In.</p>
+        <SignIn />
+      </div>
     );
   }
 
@@ -45,20 +42,25 @@ export default async function RecipeList() {
 
   if (!recipes || recipes.length === 0) {
     return (
-      <>
-        <div>No recipes found</div>
-        <Link href="/new-recipe">Add Recipe</Link>
-      </>
+      <div className="flex h-full flex-col items-center justify-center text-center">
+        <p className="text-3xl">No recipes found</p>
+        <Button variant="outline" asChild>
+          <Link href="/new-recipe">Add New</Link>
+        </Button>
+      </div>
     );
   }
 
   return (
-    <div className="h-full text-3xl">
-      <h1 className="text-center text-4xl font-bold">Recipe List</h1>
-      <ul>
+    <div className="flex h-full flex-col items-center px-4 text-center">
+      <h1 className="mb-8 text-4xl font-bold">Recipe List</h1>
+      <ul className="space-y-4 text-2xl">
         {recipes.map((recipe) => (
-          <li key={recipe.id} className="flex items-center space-x-4">
-            <Link className="un" href={`/${recipe.id}`}>
+          <li
+            key={recipe.id}
+            className="flex w-full max-w-2xl items-center justify-between rounded-lg bg-white p-4 shadow dark:bg-gray-800"
+          >
+            <Link className="font-semibold underline" href={`/${recipe.id}`}>
               {recipe.title}
             </Link>
             <DeleteRecipe recipeId={recipe.id.toString()} />

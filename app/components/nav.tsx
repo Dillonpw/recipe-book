@@ -65,7 +65,7 @@ const Nav = () => {
             <div className="absolute z-50 w-full gap-4 bg-gray-100 text-center text-3xl shadow-lg dark:bg-[#121212] dark:text-white">
               <Link
                 href="/new-recipe"
-                className="block  py-8 hover:bg-gray-200 dark:hover:bg-gray-700"
+                className="block py-8 hover:bg-gray-200 dark:hover:bg-gray-700"
                 onClick={closeMenu}
               >
                 Add New Recipe

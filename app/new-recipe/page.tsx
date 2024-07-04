@@ -1,9 +1,13 @@
 import React from "react";
 import RecipeForm from "../components/recipeForm";
+import LoggedIn from "../components/loggedIn";
 export default function Page() {
   return (
-    <div className="h-full flex flex-col justify-center items-center">
-      <RecipeForm />
-    </div>
+    <>
+      <LoggedIn />
+      <div className="flex h-full flex-col items-center justify-center">
+        <RecipeForm />
+      </div>
+    </>
   );
 }
