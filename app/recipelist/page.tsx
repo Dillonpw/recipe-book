@@ -3,9 +3,10 @@ import LoggedIn from "../components/loggedIn";
 
 export default function Recipelist() {
   return (
-    <div className="flex flex-col justify-center items-center m-10">
-      <LoggedIn />
+    <div className="flex h-full flex-col items-center justify-center">
       <RecipeList />
+
+      <LoggedIn />
     </div>
   );
 }

@@ -30,8 +30,8 @@ export default async function RecipeList() {
   if (!session || !session.user || !session.user.id) {
     return (
       <>
-        <div className="m-10 text-3xl text-center">
-          <p className=" mb-4">Sorry... No recipes found.</p>Want to{" "}
+        <div className="mb-10 text-3xl text-center">
+          <p className="mb-4">Sorry... No recipes found.</p>Want to{" "}
           <Link href="/new-recipe" className="un text-3xl font-bold">
             Add A Recipe?
           </Link>
@@ -53,7 +53,7 @@ export default async function RecipeList() {
   }
 
   return (
-    <div className="m-4 h-full text-3xl">
+    <div className="h-full text-3xl">
       <h1 className="text-center text-4xl font-bold">Recipe List</h1>
       <ul>
         {recipes.map((recipe) => (

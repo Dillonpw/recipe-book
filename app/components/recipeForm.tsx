@@ -36,38 +36,46 @@ const RecipeForm = () => {
 
   return (
     <>
-    <h1 className="text-4xl text-center mt-10">Add a New Recipe</h1>
-    <form onSubmit={handleSubmit} className="m-10">
-      <div className="mb-4">
-        <label htmlFor="title" className="text-4xl">Title:</label>
-        <Input
-          type="text"
-          id="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
-        />
-      </div>
-      <div className="mb-4">
-        <label htmlFor="ingredients" className="text-2xl">Ingredients (comma-separated):</label>
-        <Textarea
-          id="ingredients"
-          value={ingredients}
-          onChange={(e) => setIngredients(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="steps" className="text-2xl">Steps (comma-separated):</label>
-        <Textarea
-          id="steps"
-          value={steps}
-          onChange={(e) => setSteps(e.target.value)}
-          required
-        />
-      </div>
-      <Button  className="mt-4" type="submit">Submit</Button>
-    </form>
+      <h1 className="text-center text-6xl">Add A New Recipe</h1>
+      <form onSubmit={handleSubmit} className="m-10">
+        <div className="mb-4">
+          <label htmlFor="title" className="text-4xl">
+            Title:
+          </label>
+          <Input
+            type="text"
+            id="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="ingredients" className="text-2xl">
+            Ingredients (comma-separated):
+          </label>
+          <Textarea
+            id="ingredients"
+            value={ingredients}
+            onChange={(e) => setIngredients(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="steps" className="text-2xl">
+            Steps (comma-separated):
+          </label>
+          <Textarea
+            id="steps"
+            value={steps}
+            onChange={(e) => setSteps(e.target.value)}
+            required
+          />
+        </div>
+        <Button className="mt-4" type="submit">
+          Submit
+        </Button>
+      </form>
     </>
   );
 };
