@@ -1,7 +1,7 @@
 import Link from "next/link";
 const Footer = () => {
   return (
-    <footer className="flex h-24 items-center justify-center shadow-inner">
+    <footer className="mt-auto flex h-24 items-center justify-center shadow-inner">
       <Link className="un" href="https://github.com/Dillonpw" target="_blank">
         {" "}
         Dillonpw
