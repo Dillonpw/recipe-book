@@ -24,7 +24,7 @@ const Nav = () => {
   ];
 
   return (
-    <header className="fixed-nav bg-gray-100 shadow-lg transition-all duration-300 dark:bg-[#242424] dark:text-white">
+    <header className="fixed-nav bg-gray-100 shadow-lg transition-all duration-300 dark:bg-zinc-950 dark:text-white">
       {/* Desktop Navigation */}
       <div className="mx-10 hidden py-2 text-2xl md:block">
         <nav className="my-4 flex items-center justify-between">
