@@ -39,7 +39,7 @@ const Nav = () => {
           </Link>
 
           <Link href="/">
-            <h1 className="font-bold">Recipe Book</h1>
+            <h1 className="font-bold">RecipeBook</h1>
           </Link>
 
           <ThemeToggle />

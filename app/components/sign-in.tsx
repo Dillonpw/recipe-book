@@ -12,6 +12,14 @@ export function SignIn() {
       >
         <Button type="submit">Signin with GitHub</Button>
       </form>
+      <form
+      action={async () => {
+        "use server"
+        await signIn("google")
+      }}
+    >
+      <Button type="submit">Signin with Google</Button>
+    </form>
     </>
   );
 }

@@ -1,4 +1,5 @@
 import { SignIn } from "./sign-in";
+import { auth } from "@/auth";
 import { Button } from "./ui/button";
 import {
   Dialog,
@@ -9,7 +10,11 @@ import {
   DialogTrigger,
 } from "./ui/dialog";
 
-export default function LoginDialog() {
+export default async function LoginDialog() {
+  const session = await auth();
+
+  if (session?.user) return null;
+
   return (
     <Dialog>
       <DialogTrigger asChild>
