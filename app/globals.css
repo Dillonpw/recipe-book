@@ -105,3 +105,7 @@ body {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+.title{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

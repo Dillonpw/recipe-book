@@ -1,6 +1,8 @@
 import { auth } from "@/auth";
 import React from "react";
 import { SignOut } from "./sign-out";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Skeleton } from "./ui/skeleton";
 
 const LoggedIn = async () => {
   const session = await auth();
@@ -8,8 +10,16 @@ const LoggedIn = async () => {
   if (!session?.user) return null;
 
   return (
-    <div className="mt-4 flex w-full items-center justify-between px-4">
-      <p className="text-3xl">{session.user.name}</p>
+    <div className="mt-4 flex w-full items-end justify-between px-4">
+      <div className="flex items-end gap-2">
+        <Avatar>
+          <AvatarImage src={session.user.image as string} />
+          <AvatarFallback>
+            <Skeleton className="h-12 w-12 rounded-full" />
+          </AvatarFallback>
+        </Avatar>
+        <p className="text-3xl">{session.user.name}</p>
+      </div>
       <SignOut />
     </div>
   );

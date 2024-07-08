@@ -13,7 +13,7 @@ const Content = () => {
             Welcome To RecipeBook
           </h1>
           <p className="text-center text-3xl font-bold">
-            Store and Find Recipes From All Over The World
+            Store and find recipes from all over the world.
           </p>
           <div className="flex gap-6">
             <Button variant="outline" asChild>

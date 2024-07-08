@@ -26,9 +26,9 @@ const Nav = () => {
   return (
     <header className="fixed-nav bg-gray-100 shadow-lg transition-all duration-300 dark:bg-[#242424] dark:text-white">
       {/* Desktop Navigation */}
-      <div className="mx-20 hidden py-2 text-2xl md:block">
+      <div className="mx-10 hidden py-2 text-2xl md:block">
         <nav className="my-4 flex items-center justify-between">
-          <Link href="/">
+          <Link href="/" className="flex gap-2 items-center">
             <Image
               src={"/RecipeBook.jpeg"}
               alt="logo"
@@ -36,10 +36,11 @@ const Nav = () => {
               width={50}
               height={50}
             />
+            <h1 className="font-bold">RecipeBook</h1>
           </Link>
 
+
           <Link href="/">
-            <h1 className="font-bold">RecipeBook</h1>
           </Link>
 
           <ThemeToggle />
