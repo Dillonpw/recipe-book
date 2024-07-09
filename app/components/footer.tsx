@@ -12,6 +12,7 @@ const Footer = () => {
           <li className="un cursor-pointer">
             <Link href="/recipe-list">Recipe List</Link>
           </li>
+          <li><Link href="/social">Social</Link></li>
         </ul>
       </div>
       <div className="mb-4 flex justify-center">

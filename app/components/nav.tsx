@@ -21,6 +21,9 @@ const Nav = () => {
       label: "New Recipe",
       href: "/new-recipe",
     },
+    {
+      label: "Social",
+      href: "/social",}
   ];
 
   return (

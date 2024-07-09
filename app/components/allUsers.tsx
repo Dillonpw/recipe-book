@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Skeleton } from "./ui/skeleton";
 
 interface User {
   id: string;
   name: string;
   email: string;
-  // add other user fields here as needed
+  image: string;
 }
 
 const AllUsers = () => {
@@ -40,9 +42,17 @@ const AllUsers = () => {
       {users.length === 0 ? (
         <p>No users found.</p>
       ) : (
-        <ul className="font-bold mx-4">
+        <ul className="mx-4 font-bold">
           {users.map((user) => (
-            <li key={user.id}>{user.name}</li>
+            <li className="flex items-center gap-2" key={user.id}>
+              <Avatar>
+                <AvatarImage src={user.image as string} />
+                <AvatarFallback>
+                  <Skeleton className="h-12 w-12 rounded-full" />
+                </AvatarFallback>
+              </Avatar>
+              {user.name}
+            </li>
           ))}
         </ul>
       )}
