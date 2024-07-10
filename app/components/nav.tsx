@@ -23,7 +23,8 @@ const Nav = () => {
     },
     {
       label: "Social",
-      href: "/social",}
+      href: "/social",
+    },
   ];
 
   return (
@@ -31,7 +32,7 @@ const Nav = () => {
       {/* Desktop Navigation */}
       <div className="mx-10 hidden py-2 text-2xl md:block">
         <nav className="my-4 flex items-center justify-between">
-          <Link href="/" className="flex gap-2 items-center">
+          <Link href="/" className="flex items-center gap-2">
             <Image
               src={"/RecipeBook.jpeg"}
               alt="logo"
@@ -42,9 +43,7 @@ const Nav = () => {
             <h1 className="font-bold">RecipeBook</h1>
           </Link>
 
-
-          <Link href="/">
-          </Link>
+          <Link href="/"></Link>
 
           <ThemeToggle />
         </nav>
