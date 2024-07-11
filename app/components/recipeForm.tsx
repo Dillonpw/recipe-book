@@ -53,7 +53,7 @@ const RecipeForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="ingredients" className="text-xl md:last:text-2xl">
+          <label htmlFor="ingredients" className="text-xl md:text-2xl">
             Ingredients (comma-separated):
           </label>
           <Textarea
