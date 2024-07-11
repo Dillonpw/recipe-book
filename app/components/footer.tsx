@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="flex h-auto flex-col p-4 mt-14">
+    <footer className="flex h-auto flex-col p-4 mt-6">
       <div className="mb-4 flex w-fit flex-col">
         <p className="mb-2 text-lg font-bold underline">Pages</p>
         <ul className="flex flex-col gap-1">
