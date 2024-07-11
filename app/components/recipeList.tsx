@@ -43,7 +43,7 @@ export default async function RecipeList() {
   if (!recipes || recipes.length === 0) {
     return (
       <div className="flex h-full flex-col items-center justify-center gap-2 text-center">
-        <p className="md:text4xl text-2xl font-bold">No recipes found</p>
+        <p className="text-2xl font-bold md:text-4xl">No recipes found</p>
         <Button variant="outline" asChild>
           <Link href="/new-recipe">Add New</Link>
         </Button>
@@ -53,7 +53,7 @@ export default async function RecipeList() {
 
   return (
     <div className="flex h-full flex-col items-center px-4 text-center">
-      <h1 className="mb-8 text-4xl font-bold">Recipe List</h1>
+      <h1 className="mb-8 text-2xl font-bold md:text-4xl">Recipe List</h1>
       <ul className="space-y-4 text-2xl">
         {recipes.map((recipe) => (
           <li
