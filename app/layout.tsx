@@ -22,11 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      className="h-full bg-gray-50 dark:bg-zinc-950 dark:text-gray-100"
+      className="h-full bg-gray-100 dark:bg-zinc-950 dark:text-gray-100"
       lang="en"
     >
       <body
-        className={`${inter.className} flex min-h-screen flex-col dark:bg-zinc-950`}
+        className={`${inter.className} flex min-h-screen flex-col bg-gray-100 dark:bg-zinc-950 md:mx-40`}
       >
         <Nav />
         <main className="flex-grow">{children}</main>
