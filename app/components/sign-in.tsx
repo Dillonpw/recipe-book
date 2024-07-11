@@ -9,19 +9,25 @@ export function SignIn() {
       <form
         action={async () => {
           "use server";
-          await signIn("github");
+          await signIn("github", { redirectTo: "/social" });
         }}
       >
-        <Button type="submit"><FontAwesomeIcon icon={faGithub} className="mr-2" />Signin with GitHub</Button>
+        <Button type="submit">
+          <FontAwesomeIcon icon={faGithub} className="mr-2" />
+          Signin with GitHub
+        </Button>
       </form>
       <form
-      action={async () => {
-        "use server"
-        await signIn("google")
-      }}
-    >
-      <Button type="submit"><FontAwesomeIcon icon={faGoogle} className="mr-2" />Signin with Google</Button>
-    </form>
+        action={async () => {
+          "use server";
+          await signIn("google", { redirectTo: "/social" });
+        }}
+      >
+        <Button type="submit">
+          <FontAwesomeIcon icon={faGoogle} className="mr-2" />
+          Signin with Google
+        </Button>
+      </form>
     </>
   );
 }
