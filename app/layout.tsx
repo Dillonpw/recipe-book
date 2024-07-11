@@ -26,7 +26,7 @@ export default function RootLayout({
       lang="en"
     >
       <body
-        className={`${inter.className} flex min-h-screen flex-col dark:bg-zinc-950`}
+        className={`${inter.className} flex min-h-screen flex-col dark:bg-zinc-900`}
       >
         <Nav />
         <main className="flex-grow">{children}</main>

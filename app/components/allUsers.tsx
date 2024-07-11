@@ -40,7 +40,7 @@ const AllUsers = () => {
     <div>
       <h1 className="m-4 flex-grow text-2xl text-center md:text-4xl">Users List</h1>
       {users.length === 0 ? (
-        <p>No users found.</p>
+        <p className="mx-4">No users found.</p>
       ) : (
         <ul className="mx-4 font-bold">
           {users.map((user) => (
