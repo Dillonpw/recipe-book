@@ -17,13 +17,13 @@ const Content = () => {
             Store and find recipes from all over the world.
           </p>
           <div className="flex flex-col items-center justify-center gap-2 md:flex-row">
-            <Button variant="outline" size="default" asChild>
+            <Button size="default" asChild>
               <Link href="/new-recipe">New Recipe</Link>
             </Button>
-            <Button variant="outline" size="default" asChild>
+            <Button size="default" asChild>
               <Link href="/recipelist">Recipes</Link>
             </Button>
-            <Button variant="outline" size="default" asChild>
+            <Button size="default" asChild>
               <Link href="/social">Social</Link>
             </Button>
           </div>
