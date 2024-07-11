@@ -8,7 +8,7 @@ const Content = () => {
     <>
       <LoggedIn />
       <div className="relative flex h-full items-center justify-center">
-        <div className="absolute inset-0 z-0 bg-[url('/bg-img.webp')] bg-[length:700px] bg-bottom bg-no-repeat before:absolute before:inset-0 before:bg-black/10 before:backdrop-blur-sm" />
+        <div className="absolute inset-0 z-0 bg-[url('/bg-img.webp')] bg-[length:700px] bg-bottom bg-no-repeat before:absolute before:inset-0 before:bg-gray-50/10 before:backdrop-blur-sm" />
         <div className="relative z-10 flex flex-col items-center justify-center gap-4">
           <h1 className="text-center text-2xl font-bold text-gray-50 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,4)] md:text-4xl">
             Welcome To RecipeBook
