@@ -36,10 +36,12 @@ const RecipeForm = () => {
 
   return (
     <>
-      <h1 className="text-center text-4xl font-bold">Add A New Recipe</h1>
+      <h1 className="text-center text-2xl font-bold md:text-4xl">
+        Add A New Recipe
+      </h1>
       <form onSubmit={handleSubmit} className="m-10">
         <div className="mb-4">
-          <label htmlFor="title" className="text-2xl">
+          <label htmlFor="title" className="text-xl md:text-2xl">
             Title:
           </label>
           <Input
@@ -51,7 +53,7 @@ const RecipeForm = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="ingredients" className="text-2xl">
+          <label htmlFor="ingredients" className="text-xl md:last:text-2xl">
             Ingredients (comma-separated):
           </label>
           <Textarea
@@ -62,7 +64,7 @@ const RecipeForm = () => {
           />
         </div>
         <div>
-          <label htmlFor="steps" className="text-2xl">
+          <label htmlFor="steps" className="text-xl md:text-2xl">
             Steps (comma-separated):
           </label>
           <Textarea

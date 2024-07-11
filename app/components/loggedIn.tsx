@@ -11,14 +11,14 @@ const LoggedIn = async () => {
 
   return (
     <div className="mt-4 flex w-full items-end justify-between px-4">
-      <div className="flex items-end gap-2">
+      <div className="flex items-center gap-2">
         <Avatar>
           <AvatarImage src={session.user.image as string} />
           <AvatarFallback>
             <Skeleton className="h-12 w-12 rounded-full" />
           </AvatarFallback>
         </Avatar>
-        <p className="text-3xl">{session.user.name}</p>
+        <p className="text-xl font-bold md:text-3xl">{session.user.name}</p>
       </div>
       <SignOut />
     </div>
