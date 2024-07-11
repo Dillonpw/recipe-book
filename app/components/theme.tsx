@@ -25,13 +25,13 @@ const ThemeToggle = () => {
     <div className="mx-2">
       <button
         aria-label="theme-toggle"
-        className="mt-2 flex h-10 w-10 items-center justify-center text-2xl font-bold transition-transform duration-300 ease-in-out"
+        className="mt-2 flex h-10 w-10 items-center justify-center text-xl font-bold transition-transform duration-300 ease-in-out"
         onClick={toggleTheme}
       >
         <FontAwesomeIcon
           icon={darkMode ? faSun : faMoon}
           fixedWidth
-          className="theme-icon text-5xl text-yellow-400 transition-transform duration-300 ease-out"
+          className="theme-icon text-3xl text-yellow-400 transition-transform duration-300 ease-out"
         />
       </button>
     </div>

@@ -12,7 +12,7 @@ export function SignIn() {
           await signIn("github", { redirectTo: "/social" });
         }}
       >
-        <Button type="submit">
+        <Button type="submit" size="lg">
           <FontAwesomeIcon icon={faGithub} className="mr-2" />
           Signin with GitHub
         </Button>
@@ -23,7 +23,7 @@ export function SignIn() {
           await signIn("google", { redirectTo: "/social" });
         }}
       >
-        <Button type="submit">
+        <Button type="submit" size="lg">
           <FontAwesomeIcon icon={faGoogle} className="mr-2" />
           Signin with Google
         </Button>
