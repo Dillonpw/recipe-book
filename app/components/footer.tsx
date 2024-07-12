@@ -2,19 +2,20 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="flex h-auto flex-col p-4 mt-6">
+    <footer className="mt-6 flex h-auto flex-col p-4">
       <div className="mb-4 flex w-fit flex-col">
         <p className="mb-2 text-lg font-bold underline">Pages</p>
         <ul className="flex flex-col gap-1">
-        <li className="un cursor-pointer">
+          <li className="un cursor-pointer">
             <Link href="/">Home</Link>
+          </li>
+          <li className="un cursor-pointer">
+            <Link href="/recipe-list">Recipes</Link>
           </li>
           <li className="un cursor-pointer">
             <Link href="/new-recipe">Add Recipes</Link>
           </li>
-          <li className="un cursor-pointer">
-            <Link href="/recipe-list">Recipe List</Link>
-          </li>
+
           <li className="un cursor-pointer">
             <Link href="/social">Social</Link>
           </li>
