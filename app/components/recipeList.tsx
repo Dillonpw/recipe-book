@@ -53,12 +53,12 @@ export default async function RecipeList() {
 
   return (
     <div className="flex h-full flex-col items-center px-4 text-center">
-      <h1 className="mb-8 text-2xl font-bold md:text-4xl">Recipe List</h1>
-      <ul className="space-y-4 text-2xl">
+      <h1 className="my-8 text-2xl font-bold md:text-4xl">Recipe List</h1>
+      <ul className="text-2xl">
         {recipes.map((recipe) => (
           <li
             key={recipe.id}
-            className="flex w-full max-w-2xl items-center justify-between rounded-lg bg-white p-4 shadow dark:bg-gray-800"
+            className="flex items-center justify-between rounded-lg bg-white p-4 shadow dark:bg-gray-800"
           >
             <Link className="font-semibold underline" href={`/${recipe.id}`}>
               {recipe.title}
