@@ -30,7 +30,7 @@ const Nav = () => {
   return (
     <header className="fixed-nav bg-gray-100 duration-300 dark:bg-zinc-950 dark:text-white">
       {/* Desktop Navigation */}
-      <div className="mx-10 hidden py-2 text-2xl md:block">
+      <div className="mx-10 hidden py-2 text-2xl lg:block">
         <nav className="my-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <Image
@@ -45,18 +45,17 @@ const Nav = () => {
 
           <Link href="/"></Link>
 
-          {links.map((link) => (
-            <Link className="un text-xl" key={link.label} href={link.href}>
-              {link.label}
-            </Link>
-          ))}
-
+            {links.map((link) => (
+              <Link className="un text-xl xl:text-3xl" key={link.label} href={link.href}>
+                {link.label}
+              </Link>
+            ))}
           <ThemeToggle />
         </nav>
       </div>
 
       {/* Mobile Navigation */}
-      <div className="relative mx-2 py-2 text-4xl md:hidden">
+      <div className="relative mx-2 py-2 text-4xl lg:hidden">
         <nav className="my-4 flex items-center justify-between">
           <Link href="/">
             <Image
