@@ -9,7 +9,7 @@ export function SignIn() {
       <form
         action={async () => {
           "use server";
-          await signIn("github", { redirectTo: "/social" });
+          await signIn("github", { redirectTo: "/recipe-list" });
         }}
       >
         <Button type="submit" size="lg">
@@ -20,7 +20,7 @@ export function SignIn() {
       <form
         action={async () => {
           "use server";
-          await signIn("google", { redirectTo: "/social" });
+          await signIn("google", { redirectTo: "/recipe-list" });
         }}
       >
         <Button type="submit" size="lg">

@@ -52,7 +52,7 @@ export default async function RecipeList() {
   }
 
   return (
-    <div className="flex h-full flex-col items-center px-4 text-center">
+    <div className="flex h-full flex-col items-center px-4">
       <h1 className="my-8 text-2xl font-bold md:text-4xl">Recipe List</h1>
       <ul className="text-2xl">
         {recipes.map((recipe) => (
@@ -60,7 +60,7 @@ export default async function RecipeList() {
             key={recipe.id}
             className="flex items-center justify-between rounded-lg bg-white p-4 shadow dark:bg-gray-800"
           >
-            <Link className="font-semibold underline" href={`/${recipe.id}`}>
+            <Link className="font-semibold underline mr-10" href={`/${recipe.id}`}>
               {recipe.title}
             </Link>
             <DeleteRecipe recipeId={recipe.id.toString()} />
