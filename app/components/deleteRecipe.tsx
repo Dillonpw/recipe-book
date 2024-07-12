@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "./ui/button";
 import { useState } from "react";
 
 interface DeleteRecipeProps {
@@ -37,9 +38,9 @@ const DeleteRecipe: React.FC<DeleteRecipeProps> = ({ recipeId }) => {
 
   return (
     <div>
-      <button onClick={handleDelete} disabled={isDeleting}>
+      <Button variant="destructive" onClick={handleDelete} disabled={isDeleting}>
         {isDeleting ? "Deleting..." : "Delete Recipe"}
-      </button>
+      </Button>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );

@@ -29,10 +29,6 @@ const RecipeForm = () => {
     if (response.ok) {
       const newRecipe = await response.json();
       console.log("Recipe created successfully:", newRecipe);
-      setTitle("");
-      setIngredients("");
-      setSteps("");
-      alert("Recipe created successfully!");
     } else {
       const error = await response.json();
     }
