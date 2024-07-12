@@ -30,8 +30,8 @@ const Nav = () => {
   return (
     <header className="fixed-nav bg-gray-100 duration-300 dark:bg-zinc-950 dark:text-white">
       {/* Desktop Navigation */}
-      <div className="mx-10 hidden py-2 text-2xl lg:block">
-        <nav className="my-4 flex items-center justify-between">
+      <div className="px-10 hidden py-2 text-2xl lg:block">
+        <nav className="my-4 flex items-center justify-evenly">
           <Link href="/" className="flex items-center gap-2">
             <Image
               src={"/RecipeBook.jpeg"}
