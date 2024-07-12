@@ -46,7 +46,7 @@ const Nav = () => {
           <Link href="/"></Link>
 
           {links.map((link) => (
-            <Link className="un" key={link.label} href={link.href}>
+            <Link className="un text-xl" key={link.label} href={link.href}>
               {link.label}
             </Link>
           ))}
