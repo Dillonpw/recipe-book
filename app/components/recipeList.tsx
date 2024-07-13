@@ -58,12 +58,17 @@ export default async function RecipeList() {
         {recipes.map((recipe) => (
           <li
             key={recipe.id}
-            className="flex items-center justify-between rounded-lg bg-white p-4 shadow dark:bg-gray-800"
+            className="rounded-lg bg-white p-4 shadow dark:bg-gray-800"
           >
-            <Link className="font-semibold underline mr-10" href={`/${recipe.id}`}>
-              {recipe.title}
-            </Link>
-            <DeleteRecipe recipeId={recipe.id.toString()} />
+            <div className="flex items-center justify-between">
+              <Link
+                className="mr-10 font-semibold underline"
+                href={`/${recipe.id}`}
+              >
+                {recipe.title}
+              </Link>
+              <DeleteRecipe recipeId={recipe.id.toString()} />
+            </div>
           </li>
         ))}
       </ul>
