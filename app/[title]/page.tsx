@@ -24,24 +24,26 @@ export default async function RecipePage() {
 
   return (
     <div className="mx-10 p-2">
-      <h1 className="text-center text-4xl title">{recipe.title}</h1>
-      <h2 className="text-2xl font-bold mb-2">Ingredients</h2>
-      <ul className="list-disc mb-4">
+      <h1 className="title text-center text-4xl">{recipe.title}</h1>
+      <h2 className="mb-2 text-2xl font-bold">Ingredients</h2>
+      <ul className="mb-4 list-disc">
         {recipe.ingredients.map((ingredient: string, index: number) => (
           <li key={index}>{ingredient}</li>
         ))}
       </ul>
-      <h2 className="text-2xl font-bold mb-2">Steps</h2>
-      <ol className="list-decimal mb-4">
+      <h2 className="mb-2 text-2xl font-bold">Steps</h2>
+      <ol className="mb-4 list-decimal">
         {recipe.steps.map((step: string, index: number) => (
-          <li className="mb-2" key={index}>{step}</li>
+          <li className="mb-2" key={index}>
+            {step}
+          </li>
         ))}
       </ol>
-      <div className="flex justify-between items-center">
-        <DeleteRecipe recipeId={recipe.id} />
+      <div className="flex items-center justify-between">
         <Button asChild variant="link">
           <Link href="/">Back</Link>
         </Button>
+        <DeleteRecipe recipeId={recipe.id} />
       </div>
     </div>
   );
