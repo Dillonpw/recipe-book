@@ -28,11 +28,11 @@ const Nav = () => {
   ];
 
   return (
-    <header className="fixed-nav bg-gray-100 duration-300 dark:bg-zinc-950 dark:text-white">
+    <header className="bg-gray-100 duration-300 dark:bg-zinc-950 dark:text-white min-w-full shaodw-b-sm mb-2 ">
       {/* Desktop Navigation */}
-      <div className="px-10 hidden py-2 text-2xl lg:block">
-        <nav className="my-4 flex items-center justify-evenly">
-          <Link href="/" className="flex items-center gap-2">
+      <div className="hidden text-2xl lg:block">
+        <nav className="my-4 flex items-center gap-4 justify-evenly">
+          <Link href="/" className="flex items-center">
             <Image
               src={"/RecipeBook.jpeg"}
               alt="logo"
@@ -42,9 +42,6 @@ const Nav = () => {
             />
             <h1 className="font-bold">RecipeBook</h1>
           </Link>
-
-          <Link href="/"></Link>
-
             {links.map((link) => (
               <Link className="un text-xl xl:text-3xl" key={link.label} href={link.href}>
                 {link.label}
