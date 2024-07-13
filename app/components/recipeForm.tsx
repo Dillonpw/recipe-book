@@ -36,10 +36,10 @@ const RecipeForm = () => {
 
   return (
     <>
-      <h1 className="text-center text-2xl font-bold md:text-4xl">
+      <h1 className="text-center text-2xl font-bold md:text-4xl b">
         Add A New Recipe
       </h1>
-      <form onSubmit={handleSubmit} className="m-10">
+      <form onSubmit={handleSubmit} className="m-10 text-black">
         <div className="mb-4">
           <label htmlFor="title" className="text-xl md:text-2xl">
             Title:
