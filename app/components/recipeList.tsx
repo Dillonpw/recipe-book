@@ -53,7 +53,7 @@ export default async function RecipeList() {
 
   return (
     <div className="flex h-full flex-col items-center px-4">
-      <h1 className="my-8 text-2xl font-bold md:text-4xl">Recipe List</h1>
+      <h1 className="my-8 text-2xl font-bold md:text-3xl">Recipe List</h1>
       <ul className="text-2xl">
         {recipes.map((recipe) => (
           <li
