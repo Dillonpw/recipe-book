@@ -29,6 +29,10 @@ const RecipeForm = () => {
     if (response.ok) {
       const newRecipe = await response.json();
       console.log("Recipe created successfully:", newRecipe);
+      alert("Recipe created successfully");
+      setTitle("");
+      setIngredients("");
+      setSteps("");
     } else {
       const error = await response.json();
     }
@@ -36,7 +40,7 @@ const RecipeForm = () => {
 
   return (
     <>
-      <h1 className="text-center text-2xl font-bold md:text-4xl b">
+      <h1 className="b text-center text-2xl font-bold md:text-4xl">
         Add A New Recipe
       </h1>
       <form onSubmit={handleSubmit} className="m-10 text-black">

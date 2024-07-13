@@ -39,7 +39,7 @@ const DeleteRecipe: React.FC<DeleteRecipeProps> = ({ recipeId }) => {
   return (
     <div>
       <Button variant="destructive" onClick={handleDelete} disabled={isDeleting}>
-        {isDeleting ? "Deleting..." : "Delete Recipe"}
+        {isDeleting ? "Deleting..." : "Delete"}
       </Button>
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
