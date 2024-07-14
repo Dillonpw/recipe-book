@@ -21,12 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      className="h-full bg-gray-100 dark:bg-zinc-950 dark:text-gray-100"
-      lang="en"
-    >
+    <html lang="en" className="min-h-full">
       <body
-        className={`${inter.className} flex min-h-screen flex-col bg-gray-100 dark:bg-zinc-950`}
+        className={`${inter.className} flex min-h-full flex-col bg-gray-100 dark:bg-zinc-950`}
       >
         <Nav />
         <main className="flex-grow">{children}</main>

@@ -28,7 +28,7 @@ const Nav = () => {
   ];
 
   return (
-    <header className="bg-gray-100 duration-300 dark:bg-zinc-950 dark:text-white min-w-full shaodw-b-sm mb-2 ">
+    <header className="bg-none duration-300 dark:text-white min-w-full shaodw-b-sm">
       {/* Desktop Navigation */}
       <div className="hidden text-2xl lg:block">
         <nav className="my-4 flex items-center gap-4 justify-evenly">

@@ -31,10 +31,10 @@ export default async function RecipePage() {
           <li key={index}>{ingredient}</li>
         ))}
       </ul>
-      <h2 className="mb-2 text-2xl font-bold">Steps</h2>
-      <ol className="mb-4 list-decimal">
+      <h2 className="pb-2 text-2xl font-bold">Steps</h2>
+      <ol className="list-decimal pb-4">
         {recipe.steps.map((step: string, index: number) => (
-          <li className="mb-2" key={index}>
+          <li className="pb-2" key={index}>
             {step}
           </li>
         ))}
