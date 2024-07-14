@@ -23,7 +23,10 @@ export default async function RecipePage() {
   }
 
   return (
-    <div className="mx-10 p-2">
+    <div className="mx-10 p-2 flex flex-col">
+      <Button className="justify-end" asChild variant="link">
+        <Link href="/">Back</Link>
+      </Button>
       <h1 className="title text-center text-4xl">{recipe.title}</h1>
       <h2 className="mb-2 text-2xl font-bold">Ingredients</h2>
       <ul className="mb-4 list-disc">
@@ -39,10 +42,7 @@ export default async function RecipePage() {
           </li>
         ))}
       </ol>
-      <div className="flex items-center justify-between">
-        <Button asChild variant="link">
-          <Link href="/">Back</Link>
-        </Button>
+      <div className="flex items-center">
         <DeleteRecipe recipeId={recipe.id} />
       </div>
     </div>
