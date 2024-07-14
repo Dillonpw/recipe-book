@@ -28,10 +28,10 @@ const Nav = () => {
   ];
 
   return (
-    <header className="bg-none duration-300 dark:text-white min-w-full shaodw-b-sm">
+    <header className="shaodw-b-sm min-w-full bg-none duration-300 dark:text-white">
       {/* Desktop Navigation */}
       <div className="hidden text-2xl lg:block">
-        <nav className="my-4 flex items-center gap-4 justify-evenly">
+        <nav className="my-4 flex items-center justify-evenly gap-4">
           <Link href="/" className="flex items-center">
             <Image
               src={"/RecipeBook.jpeg"}
@@ -42,11 +42,15 @@ const Nav = () => {
             />
             <h1 className="font-bold">RecipeBook</h1>
           </Link>
-            {links.map((link) => (
-              <Link className="un text-xl xl:text-3xl" key={link.label} href={link.href}>
-                {link.label}
-              </Link>
-            ))}
+          {links.map((link) => (
+            <Link
+              className="un text-xl xl:text-3xl"
+              key={link.label}
+              href={link.href}
+            >
+              {link.label}
+            </Link>
+          ))}
           <ThemeToggle />
         </nav>
       </div>

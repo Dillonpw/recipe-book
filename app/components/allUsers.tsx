@@ -38,7 +38,9 @@ const AllUsers = () => {
 
   return (
     <div>
-      <h1 className="m-4 flex-grow text-2xl text-center md:text-4xl">Users List</h1>
+      <h1 className="m-4 flex-grow text-center text-2xl md:text-4xl">
+        Users List
+      </h1>
       {users.length === 0 ? (
         <p className="mx-4">No users found.</p>
       ) : (

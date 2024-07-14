@@ -23,7 +23,7 @@ export default async function RecipePage() {
   }
 
   return (
-    <div className="mx-10 p-2 flex flex-col">
+    <div className="mx-10 flex flex-col p-2">
       <Button className="justify-end" asChild variant="link">
         <Link href="/">Back</Link>
       </Button>
