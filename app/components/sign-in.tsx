@@ -7,6 +7,7 @@ export function SignIn() {
   return (
     <>
       <form
+        className="mb-2"
         action={async () => {
           "use server";
           await signIn("github", { redirectTo: "/recipe-list" });

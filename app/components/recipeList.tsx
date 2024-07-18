@@ -58,7 +58,7 @@ export default async function RecipeList() {
         {recipes.map((recipe) => (
           <li
             key={recipe.id}
-            className="rounded-lg bg-white p-4 shadow dark:bg-gray-100 dark:text-zinc-950"
+            className="rounded-lg bg-white w-full p-4 shadow dark:bg-gray-100 dark:text-zinc-950"
           >
             <div className="flex items-center justify-between">
               <Link

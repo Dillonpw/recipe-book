@@ -18,7 +18,7 @@ export default async function LoginDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Sign In</Button>
+        <Button variant="secondary">Sign In</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>

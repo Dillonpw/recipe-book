@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="min-h-full">
       <body
-        className={`${inter.className} flex min-h-full flex-col bg-gray-100 dark:bg-zinc-950`}
+        className={`${inter.className} flex min-h-full flex-col bg-gray-300/90 dark:bg-zinc-950`}
       >
         <Nav />
         <main className="flex-grow">{children}</main>
