@@ -15,7 +15,7 @@ const RecipeForm = () => {
     const recipeData = {
       title,
       ingredients: ingredients.split(",").map((item) => item.trim()),
-      steps: steps.split(/\.\s*\n/).map((item) => item.trim()),
+      steps: steps.split(/\;\s*\n/).map((item) => item.trim()),
     };
 
     const response = await fetch("/api/addRecipe", {
@@ -70,7 +70,7 @@ const RecipeForm = () => {
         </div>
         <div>
           <label htmlFor="steps" className="text-xl md:text-2xl">
-            Steps (period followed by a new line):
+            Steps (semicolon followed by a new line):
           </label>
           <Textarea
             id="steps"
