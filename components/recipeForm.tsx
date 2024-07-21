@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import addRecipe from "@/actions/addRecipe";
+import addRecipe from "@/lib/actions/addRecipe";
 
 const RecipeForm = () => {
   const ref = useRef<HTMLFormElement>(null);

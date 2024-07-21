@@ -2,7 +2,7 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/auth";
 import prisma from "@/lib/prisma";
-import { revalidatePath } from "next/cache";
+import { revalidatePath} from "next/cache";
 
 const addRecipe = async (formData: FormData) => {
   const session = await auth();

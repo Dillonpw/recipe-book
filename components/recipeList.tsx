@@ -4,7 +4,7 @@ import { auth } from "@/auth";
 import { Button } from "./ui/button";
 import { SignIn } from "./sign-in";
 import Link from "next/link";
-import DeleteRecipe from "../components/deleteRecipe";
+import deleteRecipe from "@/lib/actions/deleteRecipe";
 
 interface Recipe {
   id: number;
@@ -58,7 +58,7 @@ export default async function RecipeList() {
         {recipes.map((recipe) => (
           <li
             key={recipe.id}
-            className="rounded-lg bg-white w-full p-4 shadow dark:bg-gray-100 dark:text-zinc-950"
+            className="w-full rounded-lg bg-white p-4 shadow dark:bg-gray-100 dark:text-zinc-950"
           >
             <div className="flex items-center justify-between">
               <Link
@@ -67,7 +67,9 @@ export default async function RecipeList() {
               >
                 {recipe.title}
               </Link>
-              <DeleteRecipe recipeId={recipe.id.toString()} />
+              <form action={deleteRecipe.bind(null, recipe.id.toString())}>
+                <Button variant="destructive" type="submit">Delete</Button>
+              </form>
             </div>
           </li>
         ))}
