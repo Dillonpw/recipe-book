@@ -1,6 +1,6 @@
 import React from "react";
-import RecipeForm from "../components/recipeForm";
-import LoggedIn from "../components/loggedIn";
+import RecipeForm from "@/components/recipeForm";
+import LoggedIn from "@/components/loggedIn";
 export default function Page() {
   return (
     <>

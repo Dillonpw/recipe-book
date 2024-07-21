@@ -1,7 +1,7 @@
 import prisma from "@/lib/prisma";
 import Link from "next/link";
-import DeleteRecipe from "../components/deleteRecipe";
-import { Button } from "../components/ui/button";
+import DeleteRecipe from "@/components/deleteRecipe";
+import { Button } from "@/components/ui/button";
 
 interface Recipe {
   id: string;

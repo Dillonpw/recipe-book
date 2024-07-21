@@ -1,7 +1,7 @@
-import LoggedIn from "./components/loggedIn";
-import LoginDialog from "./components/loginDialog";
+import LoggedIn from "@/components/loggedIn";
+import LoginDialog from "@/components/loginDialog";
 import Link from "next/link";
-import { Button } from "./components/ui/button";
+import { Button } from "@/components/ui/button";
 
 const Content = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import prisma from "../../lib/prisma";
-import { auth } from "../../auth";
+import prisma from "@/lib/prisma";
+import { auth } from "@/auth";
 import { Button } from "./ui/button";
 import { SignIn } from "./sign-in";
 import Link from "next/link";

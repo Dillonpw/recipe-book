@@ -1,5 +1,5 @@
-import RecipeList from "../components/recipeList";
-import LoggedIn from "../components/loggedIn";
+import RecipeList from "@/components/recipeList";
+import LoggedIn from "@/components/loggedIn";
 
 export default function Recipelist() {
   return (
