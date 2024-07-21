@@ -1,57 +1,45 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import addRecipe from "@/actions/addRecipe";
 
 const RecipeForm = () => {
-  const [title, setTitle] = useState("");
-  const [ingredients, setIngredients] = useState("");
-  const [steps, setSteps] = useState("");
+  const ref = useRef<HTMLFormElement>(null);
+
+  //set submitted state, render new content allow new recipe button
 
   return (
     <>
-      <h1 className="text-center text-2xl font-bold mb-5 md:text-4xl">
+      <h1 className="mb-5 text-center text-2xl font-bold md:text-4xl">
         Add A New Recipe
       </h1>
-      <form action={addRecipe} className="text-black mb-10">
+      <form
+        ref={ref}
+        action={async (formData) => {
+          ref.current?.reset();
+          await addRecipe(formData);
+        }}
+        className="mb-10 text-black"
+      >
         <div className="mb-4">
           <label htmlFor="title" className="text-xl md:text-2xl">
             Title:
           </label>
-          <Input
-            type="text"
-            id="title"
-            name="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-          />
+          <Input type="text" id="title" name="title" required />
         </div>
         <div className="mb-4">
           <label htmlFor="ingredients" className="text-xl md:text-2xl">
             Ingredients (comma-separated):
           </label>
-          <Textarea
-            id="ingredients"
-            name="ingredients"
-            value={ingredients}
-            onChange={(e) => setIngredients(e.target.value)}
-            required
-          />
+          <Textarea id="ingredients" name="ingredients" required />
         </div>
         <div>
           <label htmlFor="steps" className="text-xl md:text-2xl">
             Steps (semicolon followed by a new line):
           </label>
-          <Textarea
-            id="steps"
-            name="steps"
-            value={steps}
-            onChange={(e) => setSteps(e.target.value)}
-            required
-          />
+          <Textarea id="steps" name="steps" required />
         </div>
         <Button className="mt-4" type="submit">
           Submit

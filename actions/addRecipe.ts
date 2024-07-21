@@ -26,7 +26,6 @@ const addRecipe = async (formData: FormData) => {
       },
     },
   });
-
   revalidatePath("/recipe-list");
 };
 
