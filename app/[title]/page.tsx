@@ -1,6 +1,6 @@
 import prisma from "@/lib/prisma";
 import Link from "next/link";
-import DeleteRecipe from "@/components/deleteRecipe";
+import { deleteRecipe } from "@/lib/actions/deleteRecipe";
 import { Button } from "@/components/ui/button";
 
 interface Recipe {
@@ -42,9 +42,10 @@ export default async function RecipePage() {
           </li>
         ))}
       </ol>
-      <div className="flex items-center">
-        <DeleteRecipe recipeId={recipe.id} />
-      </div>
+      <form className="flex items-center" action={deleteRecipe}>
+        <input type="hidden" name="recipeId" value={recipe.id} />
+        <Button variant="destructive">Delete</Button>
+      </form>
     </div>
   );
 }

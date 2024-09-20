@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
 import "./globals.css";
@@ -23,10 +24,17 @@ export default function RootLayout({
   return (
     <html lang="en" className="min-h-full">
       <body
-        className={`${inter.className} flex min-h-full flex-col bg-gray-300/90 dark:bg-zinc-950`}
+        className={`${inter.className} flex min-h-full flex-col bg-blue-200/30 dark:bg-zinc-950`}
       >
-        <Nav />
-        <main className="flex-grow">{children}</main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Nav />
+          <main className="flex-grow">{children}</main>
+        </ThemeProvider>
         <Footer />
       </body>
     </html>

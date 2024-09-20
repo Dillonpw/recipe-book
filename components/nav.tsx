@@ -62,14 +62,13 @@ const Nav = () => {
             <Image
               src={"/RecipeBook.jpeg"}
               alt="logo"
-              className="rounded-xl"
+              className="rounded-xl border-2 border-slate-900 dark:border-white"
               width={50}
               height={50}
             />
           </Link>
 
-          <div className="flex items-center">
-            <ThemeToggle />
+          <div className="flex items-center gap-2">
             <button
               className="hover:scale-110"
               aria-label="dropdown"
@@ -77,6 +76,7 @@ const Nav = () => {
             >
               ☰
             </button>
+            <ThemeToggle />
           </div>
         </nav>
         {isOpen && (

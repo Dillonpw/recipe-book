@@ -4,7 +4,7 @@ import { auth } from "@/auth";
 import { Button } from "./ui/button";
 import { SignIn } from "./sign-in";
 import Link from "next/link";
-import deleteRecipe from "@/lib/actions/deleteRecipe";
+import { deleteRecipe } from "@/lib/actions/deleteRecipe";
 
 interface Recipe {
   id: number;
@@ -67,8 +67,9 @@ export default async function RecipeList() {
               >
                 {recipe.title}
               </Link>
-              <form action={deleteRecipe.bind(null, recipe.id.toString())}>
-                <Button variant="destructive" type="submit">Delete</Button>
+              <form className="flex items-center" action={deleteRecipe}>
+                <input type="hidden" name="recipeId" value={recipe.id} />
+                <Button variant="destructive">Delete</Button>
               </form>
             </div>
           </li>

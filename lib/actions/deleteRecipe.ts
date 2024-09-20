@@ -4,7 +4,7 @@ import { auth } from "@/auth";
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 
-const deleteRecipe = async (id: string) => {
+export const deleteRecipe = async (formData: FormData) => {
   const session = await auth();
 
   if (!session || !session.user || !session.user.id) {
@@ -12,13 +12,14 @@ const deleteRecipe = async (id: string) => {
   }
 
   const userId = session.user.id;
+  const recipeId = formData.get("recipeId");
 
-  if (!id) {
+  if (!recipeId) {
     return NextResponse.json({ error: "Missing recipe ID" }, { status: 400 });
   }
 
   const recipe = await prisma.recipe.findUnique({
-    where: { id: Number(id) },
+    where: { id: Number(recipeId) },
   });
 
   if (!recipe) {
@@ -30,9 +31,10 @@ const deleteRecipe = async (id: string) => {
   }
 
   await prisma.recipe.delete({
-    where: { id: Number(id) },
+    where: { id: Number(recipeId) },
   });
-  revalidatePath("/recipe-list");
-};
 
-export default deleteRecipe;
+  revalidatePath("/recipe-list");
+
+  return NextResponse.redirect("/recipe-list");
+};
