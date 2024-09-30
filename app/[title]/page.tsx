@@ -3,6 +3,7 @@ import Link from "next/link";
 import { deleteRecipe } from "@/lib/actions/deleteRecipe";
 import { Button } from "@/components/ui/button";
 
+
 interface Recipe {
   id: string;
   title: string;
@@ -24,10 +25,10 @@ export default async function RecipePage() {
 
   return (
     <div className="mx-10 flex flex-col p-2">
-      <Button className="justify-end" asChild variant="link">
-        <Link href="/recipe-list">Back</Link>
+      <Button asChild variant="default">
+        <Link href="/recipe-list" className="text-white">Back</Link>
       </Button>
-      <h1 className="title text-center text-4xl">{recipe.title}</h1>
+      <h1 className="title text-center text-4xl mb-10">{recipe.title}</h1>
       <h2 className="mb-2 text-2xl font-bold">Ingredients</h2>
       <ul className="mb-4 list-disc">
         {recipe.ingredients.map((ingredient: string, index: number) => (
