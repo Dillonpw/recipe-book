@@ -4,65 +4,65 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 150 30% 60%; /* Muted Green */
+    --foreground: 222.2 84% 4.9%; /* Darker Charcoal */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 150 20% 90%; /* Light Green background for cards to match theme */
+    --card-foreground: 222.2 84% 4.9%; /* Darker Charcoal text on cards */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 150 20% 90%; /* Light Green for popover to match card theme */
+    --popover-foreground: 222.2 84% 4.9%; /* Darker Charcoal for readability */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 30 30% 60%; /* Warm Yellow-Orange as primary accent color */
+    --primary-foreground: 150 25% 95%; /* Very light green for contrast with primary */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 150 15% 85%; /* Light, softer green */
+    --secondary-foreground: 222.2 47.4% 11.2%; /* Soft charcoal for readability */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 150 15% 92%; /* Very light green, almost pastel for muted components */
+    --muted-foreground: 215.4 16.3% 46.9%; /* Medium gray for readable text */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%; /* Soft blue accent, complimentary to green */
+    --accent-foreground: 222.2 47.4% 11.2%; /* Soft charcoal */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%; /* Bright red for destructive actions */
+    --destructive-foreground: 150 25% 95%; /* Very light green for contrast */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 150 15% 85%; /* Soft green for border to blend into background */
+    --input: 150 20% 95%; /* Light green for input fields */
+    --ring: 222.2 84% 4.9%; /* Darker charcoal ring for contrast */
 
-    --radius: 0.5rem;
+    --radius: 0.5rem; /* Border radius for a softer, rounded look */
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 150 25% 10%; /* Dark muted green for background in dark mode */
+    --foreground: 150 30% 95%; /* Very light green for contrast against dark background */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 150 20% 18%; /* Darker green for cards in dark mode */
+    --card-foreground: 150 30% 95%; /* Light green for readability */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 150 20% 18%; /* Same as card to keep the theme consistent */
+    --popover-foreground: 150 30% 95%; /* Light green for readability */
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 30 60% 30%; /* Brighter, slightly saturated orange for pop on dark */
+    --primary-foreground: 150 30% 95%; /* Light green for readability */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 150 15% 35%; /* Medium dark green for secondary in dark mode */
+    --secondary-foreground: 150 30% 95%; /* Light green for readability */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 150 20% 25%; /* Very dark green for muted components in dark mode */
+    --muted-foreground: 215 20.2% 75%; /* Light grey for text */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 210 50% 30%; /* Muted blue-green for an accent in dark mode */
+    --accent-foreground: 150 30% 95%; /* Light green for readability */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%; /* Darker red to fit dark theme */
+    --destructive-foreground: 150 30% 95%; /* Light green for contrast */
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 150 20% 25%; /* Dark green for borders to blend in the dark mode */
+    --input: 150 25% 22%; /* Dark muted green for input fields */
+    --ring: 212.7 26.8% 83.9%; /* Light blue-green for ring to contrast dark background */
   }
 }
 
@@ -106,8 +106,9 @@ body {
   transform-origin: bottom left;
 }
 
-.title{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.title {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .theme-icon {

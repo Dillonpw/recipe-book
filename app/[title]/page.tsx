@@ -25,7 +25,7 @@ export default async function RecipePage() {
   return (
     <div className="mx-10 flex flex-col p-2">
       <Button className="justify-end" asChild variant="link">
-        <Link href="/">Back</Link>
+        <Link href="/recipe-list">Back</Link>
       </Button>
       <h1 className="title text-center text-4xl">{recipe.title}</h1>
       <h2 className="mb-2 text-2xl font-bold">Ingredients</h2>

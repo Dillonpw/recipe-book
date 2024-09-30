@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="min-h-full">
       <body
-        className={`${inter.className} flex min-h-full flex-col bg-blue-200/30 dark:bg-zinc-950`}
+        className={`${inter.className} flex min-h-full flex-col bg-background`}
       >
         <ThemeProvider
           attribute="class"

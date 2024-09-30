@@ -43,7 +43,7 @@ export default async function RecipeList() {
   if (!recipes || recipes.length === 0) {
     return (
       <div className="flex h-full flex-col gap-2 text-center">
-        <p className="text-2xl font-bold md:text-4xl">No recipes found</p>
+        <p className="text-2xl font-bold md:text-4xl text-center">No recipes found</p>
         <Button variant="outline" asChild>
           <Link href="/new-recipe">Add New</Link>
         </Button>
@@ -63,7 +63,7 @@ export default async function RecipeList() {
             <div className="flex items-center justify-between">
               <Link
                 className="mr-10 font-semibold underline"
-                href={`/${recipe.id}`}
+                href={`/${recipe.title}`}
               >
                 {recipe.title}
               </Link>

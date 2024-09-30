@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="mb-4 flex w-full justify-between">
         <div>
           <p className="mb-2 text-lg font-bold underline">Pages</p>
-          <ul className="flex flex-col gap-1">
+          <ul className="flex flex-col">
             <li className="un cursor-pointer">
               <Link href="/">Home</Link>
             </li>
@@ -23,7 +23,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <ul className="flex flex-col gap-1 mt-10 text-md">
+          <ul className="flex flex-col mt-10 text-md">
             <li className="un cursor-pointer">
               <p>Privacy Policy</p>
             </li>

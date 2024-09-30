@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -7,8 +7,6 @@ import addRecipe from "@/lib/actions/addRecipe";
 
 const RecipeForm = () => {
   const ref = useRef<HTMLFormElement>(null);
-
-  //set submitted state, render new content allow new recipe button
 
   return (
     <>
@@ -21,25 +19,36 @@ const RecipeForm = () => {
           ref.current?.reset();
           await addRecipe(formData);
         }}
-        className="mb-10 text-black"
+        className="mb-10"
       >
         <div className="mb-4">
           <label htmlFor="title" className="text-xl md:text-2xl">
             Title:
           </label>
-          <Input type="text" id="title" name="title" required />
+          <Input
+            className="text-black"
+            type="text"
+            id="title"
+            name="title"
+            required
+          />
         </div>
         <div className="mb-4">
           <label htmlFor="ingredients" className="text-xl md:text-2xl">
             Ingredients (comma-separated):
           </label>
-          <Textarea id="ingredients" name="ingredients" required />
+          <Textarea
+            className="text-black"
+            id="ingredients"
+            name="ingredients"
+            required
+          />
         </div>
         <div>
           <label htmlFor="steps" className="text-xl md:text-2xl">
             Steps (semicolon followed by a new line):
           </label>
-          <Textarea id="steps" name="steps" required />
+          <Textarea className="text-black" id="steps" name="steps" required />
         </div>
         <Button className="mt-4" type="submit">
           Submit
