@@ -10,7 +10,7 @@ const LoggedIn = async () => {
   if (!session?.user) return null;
 
   return (
-    <div className="flex w-full items-center justify-between bg-none px-14 py-2 duration-300">
+    <div className="flex w-full items-center justify-between bg-none px-2 py-1 duration-300">
       <div className="flex items-center gap-2">
         <Avatar>
           <AvatarImage src={session.user.image as string} />

@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 150 30% 60%; /* Muted Green */
+    --background: 150 30% 80%; /* Muted Green */
     --foreground: 222.2 84% 4.9%; /* Darker Charcoal */
 
     --card: 150 20% 90%; /* Light Green background for cards to match theme */
@@ -36,7 +36,7 @@
   }
 
   .dark {
-    --background: 150 25% 10%; /* Dark muted green for background in dark mode */
+    --background: 0 0% 5%; /* Dark muted green for background in dark mode */
     --foreground: 150 30% 95%; /* Very light green for contrast against dark background */
 
     --card: 150 20% 18%; /* Darker green for cards in dark mode */

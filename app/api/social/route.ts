@@ -8,13 +8,7 @@ export async function GET(req: NextRequest) {
     if (!session || !session.user || !session.user.id) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
-    const users = await prisma.user.findMany({
-      where: {
-        id: {
-          not: session.user.id,
-        },
-      },
-    });
+    const users = await prisma.user.findMany({});
     return NextResponse.json(users, { status: 200 });
   } catch (error) {
     console.error("Failed to fetch users:", error);
